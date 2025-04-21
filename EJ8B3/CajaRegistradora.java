@@ -1,3 +1,4 @@
+//20242228127 Santiago Solorzano Sanchez
 package CajaRegistradora;
 
 import java.util.HashMap;
