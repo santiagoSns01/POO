@@ -1,40 +1,30 @@
+//20242228127 SANTIAGO SOLORZANO SANCHEZ
 public class Avioneta extends Avion {
     private int numeroPasajeros;
     private Pasajero[] pasajeros;
     private int contadorPasajeros;
 
-    public Avioneta(String nombre, String matricula, int autonomiaVuelo, int numeroPasajeros) {
-        super(nombre, matricula, autonomiaVuelo);
-        this.numeroPasajeros = numeroPasajeros;
-        this.pasajeros = new Pasajero[numeroPasajeros];
-        this.contadorPasajeros = 0;
+    public Avioneta(String nombre, String matricula, int autonomia, int capacidadPasajeros) {
+        super(nombre, matricula, autonomia);
+        this.numeroPasajeros = capacidadPasajeros;
+        pasajeros = new Pasajero[capacidadPasajeros];
+        contadorPasajeros = 0;
     }
 
     public void agregarPasajero(Pasajero pasajero) {
-        if (contadorPasajeros < numeroPasajeros) {
-            pasajeros[contadorPasajeros] = pasajero;
-            contadorPasajeros++;
+        if (contadorPasajeros < pasajeros.length) {
+            pasajeros[contadorPasajeros++] = pasajero;
         } else {
-            System.out.println("No se pueden agregar más pasajeros.");
+            System.out.println("No se pueden agregar más pasajeros en la avioneta " + nombre);
         }
     }
 
     @Override
-    public String getInfo() {
-        StringBuilder info = new StringBuilder("Avioneta{" +
-                "nombre='" + getNombre() + '\'' +
-                ", matricula='" + getMatricula() + '\'' +
-                ", autonomiaVuelo=" + getAutonomiaVuelo() +
-                ", numeroPasajeros=" + numeroPasajeros +
-                ", pasajeros=[");
+    public void mostrarInformacion() {
+        System.out.println("Avioneta: " + nombre + " | Matrícula: " + matricula + " | Autonomía: " + autonomia + " km | Capacidad: " + numeroPasajeros);
         for (int i = 0; i < contadorPasajeros; i++) {
-            info.append(pasajeros[i].toString());
-            if (i < contadorPasajeros - 1) {
-                info.append(", ");
-            }
+            pasajeros[i].mostrarInformacion();
         }
-        info.append("]}");
-        return info.toString();
     }
 
     public Pasajero[] getPasajeros() {

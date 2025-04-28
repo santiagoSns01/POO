@@ -1,17 +1,14 @@
+//20242228127 SANTIAGO SOLORZANO SANCHEZ
 public class AeropuertoMilitar extends Aeropuerto {
-    private String rango;
+    private String nombreClave;
 
-    public AeropuertoMilitar(String nombre, String ciudad, int capacidadAviones, String rango) {
-        super(nombre, ciudad, capacidadAviones, true); // Es militar
-        this.rango = rango;
-    }
-
-    public String getRango() {
-        return rango;
+    public AeropuertoMilitar(String nombre, String ciudad, String nombreClave, int capacidadAviones) {
+        super(nombre, ciudad, capacidadAviones);
+        this.nombreClave = nombreClave;
     }
 
     @Override
-    public String getInfoAviones() {
-        return super.getInfoAviones() + ", rango=" + rango;
+    public void mostrarInformacion() {
+        System.out.println("Aeropuerto Militar: " + nombre + " | Ciudad: " + ciudad + " | Nombre en clave: " + nombreClave);
     }
 }

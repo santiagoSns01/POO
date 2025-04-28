@@ -1,3 +1,4 @@
+//20242228127 SANTIAGO SOLORZANO SANCHEZ
 public class Pasajero {
     private String nombre;
     private String dni;
@@ -13,20 +14,8 @@ public class Pasajero {
         return nombre;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    @Override
-    public String toString() {
-        return "Pasajero{" +
-                "nombre='" + nombre + '\'' +
-                ", dni='" + dni + '\'' +
-                ", edad=" + edad +
-                '}';
+    public void mostrarInformacion() {
+        System.out.println("Pasajero: " + nombre + " | DNI: " + dni + " | Edad: " + edad);
     }
 }
+

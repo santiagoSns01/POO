@@ -1,17 +1,14 @@
+//20242228127 SANTIAGO SOLORZANO SANCHEZ
 public class AeropuertoComercial extends Aeropuerto {
-    private boolean tieneTiendas;
+    private int numeroTerminales;
 
-    public AeropuertoComercial(String nombre, String ciudad, int capacidadAviones, boolean tieneTiendas) {
-        super(nombre, ciudad, capacidadAviones, false); // No es militar
-        this.tieneTiendas = tieneTiendas;
-    }
-
-    public boolean isTieneTiendas() {
-        return tieneTiendas;
+    public AeropuertoComercial(String nombre, String ciudad, int numeroTerminales, int capacidadAviones) {
+        super(nombre, ciudad, capacidadAviones);
+        this.numeroTerminales = numeroTerminales;
     }
 
     @Override
-    public String getInfoAviones() {
-        return super.getInfoAviones() + ", tieneTiendas=" + tieneTiendas;
+    public void mostrarInformacion() {
+        System.out.println("Aeropuerto Comercial: " + nombre + " | Ciudad: " + ciudad + " | Terminales: " + numeroTerminales);
     }
 }

@@ -1,25 +1,18 @@
+//20242228127 SANTIAGO SOLORZANO SANCHEZ
 public abstract class Avion {
-    private String nombre;
-    private String matricula;
-    private int autonomiaVuelo;
+    protected String nombre;
+    protected String matricula;
+    protected int autonomia;
 
-    public Avion(String nombre, String matricula, int autonomiaVuelo) {
+    public Avion(String nombre, String matricula, int autonomia) {
         this.nombre = nombre;
         this.matricula = matricula;
-        this.autonomiaVuelo = autonomiaVuelo;
+        this.autonomia = autonomia;
     }
-
-    public abstract String getInfo();
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public int getAutonomiaVuelo() {
-        return autonomiaVuelo;
-    }
+    public abstract void mostrarInformacion();
 }
